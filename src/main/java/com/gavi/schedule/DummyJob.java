@@ -13,7 +13,7 @@ public class DummyJob {
     
     private final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     
-//    @Scheduled(cron = "${job.dummy.cron}")
+    @Scheduled(cron = "${job.dummy.cron}")
     public void doSomething(){
         logger.info(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         

@@ -1,21 +1,17 @@
 package com.gavi;
 
-import com.gavi.controller.DummyRestController;
 import com.gavi.controller.CompleteClass;
-import org.junit.*;
-import org.junit.runner.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.boot.test.context.*;
-import org.springframework.boot.test.mock.mockito.*;
-import org.springframework.test.context.junit4.*;
+import com.gavi.controller.DummyRestController;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.BDDMockito.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class DummyRestControllerTest {
-    
+
     @MockBean
     private DummyRestController dummyRestController;
 
@@ -31,5 +27,5 @@ public class DummyRestControllerTest {
         given(dummyRestController.testCompleteClass()).willReturn(cc);
         assertThat(dummyRestController.testCompleteClass()).isEqualTo(cc);
     }
-    
+
 }
